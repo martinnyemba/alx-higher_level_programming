@@ -1,8 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 def remove_char_at(str, n):
     """function that creates a copy of the string
-    removing the character at the position.
+    And removing the character at the position.
     """
     if n < 0 or n >= len(str):
         return (str)
