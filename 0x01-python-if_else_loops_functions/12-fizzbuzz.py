@@ -5,7 +5,7 @@ def fizzbuzz():
         result = ""
         if (i % 3 == 0):
             result += "Fizz"
-        if (i % 5 == 0i):
+        if (i % 5 == 0):
             result += "Buzz"
         print("{}".format(result) or "{}".format(i), end='')
         print(" ", end='')
