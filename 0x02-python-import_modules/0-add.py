@@ -14,4 +14,4 @@ if __name__ == "__main__":
     #  print: <a value> + <b value> = <add(a, b) value>
     #  followed with a new line
 
-    print(f"{a} + {b} = {sum}")
+    print("{} + {} = {}".format(a, b, sum))
