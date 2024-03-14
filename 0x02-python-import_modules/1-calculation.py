@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
-#  import the functions
-from calculator_1 import add, sub, mul, div
-
 if __name__ == "__main__":
+    #  import the functions
+    from calculator_1 import add, sub, mul, div
+
     """ Define and assign variables:
     - the value 10 to a variable a
     - the value 5 to a variable b
