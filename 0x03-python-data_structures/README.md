@@ -53,6 +53,46 @@ Assuming the following list:
 my_list = [1, 2, 3, 4, 5]
 idx = 3
 
+## 2. Replace Element in List
+
+This Python function replaces an element in a list at a specific position, similar to how it's done in C, following specific conditions.
+
+### Function Details
+
+- Prototype: `def replace_in_list(my_list, idx, element):`
+- Conditions:
+  - If `idx` is negative, the function does not modify anything and returns the original list.
+  - If `idx` is out of range (greater than or equal to the number of elements in `my_list`), the function does not modify anything and returns the original list.
+  - No module imports are allowed.
+  - No try/except statements are allowed.
+
+### Example
+
+Assuming the following list:
+```python
+my_list = [1, 2, 3, 4, 5]
+idx = 3
+new_element = 9
+
+## 3.  Print List of Integers in Reverse
+
+This Python function prints all integers of a list in reverse order, with each integer printed on a separate line using the `str.format()` method.
+
+### Function Details
+
+- Prototype: `def print_reversed_list_integer(my_list=[]):`
+- Format: One integer per line, in reverse order.
+- Restrictions:
+  - Do not import any module.
+  - Do not cast integers into strings.
+  - Use `str.format()` to print integers.
+
+### Example
+
+Assuming the following list:
+```python
+my_list = [1, 2, 3, 4, 5]
+
 
 
 
