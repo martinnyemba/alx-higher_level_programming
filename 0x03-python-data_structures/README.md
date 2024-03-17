@@ -165,4 +165,4 @@ Write a function that returns a tuple with the length of a string and its first 
 ## Author
 
 - Author: Martin Nyemba
-- GitHub: [Your GitHub Profile](https://github.com/martinnyemba)
+- GitHub: [My GitHub Profile](https://github.com/martinnyemba)
