@@ -141,10 +141,33 @@ Write a function that adds 2 tuples.
 ### 8. More returns!
 Write a function that returns a tuple with the length of a string and its first character.
 
+This file contains a function `multiple_returns` that takes a sentence as input and returns a tuple with the length of the sentence and its first character. If the sentence is empty, the first character is set to `None`.
 - Prototype: `def multiple_returns(sentence):`
-0x03. Python - Data Structures: Lists, Tuples
+0x03. Python - Data Structures: Lists, Tuples 
 
+### 9-max_integer.py
 
+In this file, you'll find a function `max_integer` that finds the biggest integer in a list. If the list is empty, the function returns `None`. The function does not use the built-in `max()` function and does not import any modules.
+
+### 10-divisible_by_2.py
+
+The file `10-divisible_by_2.py` contains a function `divisible_by_2` that takes a list of integers as input and returns a new list with `True` or `False` values, depending on whether each integer in the original list is divisible by 2. The new list has the same size as the original list and does not import any modules.
+
+### 11-delete_at.py
+
+In `11-delete_at.py`, you'll find a function `delete_at` that deletes an item at a specific position in a list. If the position is negative or out of range, the function does not make any changes and returns the same list. The function does not use the `pop()` function and does not import any modules.
+
+### 12-switch.py
+
+This file contains a program that switches the values of two variables `a` and `b`. The code should be inserted where the comment indicates. The program should be exactly 5 lines long.
+
+### 13-is_palindrome.c, lists.h
+
+The files `13-is_palindrome.c` and `lists.h` contain a C function `is_palindrome` that checks if a singly linked list is a palindrome. The function returns 0 if the list is not a palindrome and 1 if it is a palindrome. An empty list is considered a palindrome.
+
+### 100-print_python_list_info.c, lists.h
+
+The files `100-print_python_list_info.c` and `lists.h` contain a C function `print_python_list_info` that prints information about a Python list. The function provides details such as the size of the list, the allocated memory, and the type of each element in the list.
 
 ## How to Use
 
