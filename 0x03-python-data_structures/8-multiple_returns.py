@@ -14,6 +14,6 @@ def multiple_returns(sentence):
     """
     str_length = len(sentence)
     if sentence == "":
-        return None
+        return str_length, None
     else:
         return str_length, sentence[0]
