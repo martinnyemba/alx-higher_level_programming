@@ -14,7 +14,8 @@ def print_reversed_list_integer(my_list=[]):
     Raises:
     ValueError: if the list contains non-integer elements
     """
-    if my_list:
-        my_list.reverse()
-        for item in my_list:
-            print("{:d}".format(item))
+    if my_list is None:
+        my_list = []
+    reversed_list = my_list.reverse()
+    for item in reversed_list:
+        print("{:d}".format(item))
