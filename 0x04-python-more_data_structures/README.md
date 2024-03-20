@@ -54,9 +54,55 @@ Example:
     # Output: [[1, 4, 9], [16, 25, 36], [49, 64, 81]]
 
 2. Search and replace
+
 3. Unique addition
+
+This function adds all unique integers in a list, considering each integer only once.
+
+Prototype: def uniq_add(my_list=[]):
+You are not allowed to import any module
+
+Example Usage:
+my_list = [1, 2, 3, 1, 4, 2, 5]
+result = uniq_add(my_list)
+print("Result: {:d}".format(result))
+
 4. Present in both
+
+a function that returns a set of common elements in two sets.
+
+Prototype: def common_elements(set_1, set_2):
+You are not allowed to import any module
+
+Args:
+    set_1 (set): The first set.
+    set_2 (set): The second set.
+
+Returns:
+    set: A set containing the common elements between set_1 and set_2.
+
+Example:
+    set_1 = { "Python", "C", "Javascript" }
+    set_2 = { "Bash", "C", "Ruby", "Perl" }
+    c_set = common_elements(set_1, set_2)
+    print(sorted(list(c_set)))  # Output: ['C']
+
 5. Only differents
+This code defines a function called `only_diff_elements` that takes in two sets as input and returns a new set containing only the elements that are present in one set but not in the other.
+
+Parameters:
+- set_1: The first set.
+- set_2: The second set.
+
+Returns:
+- A new set containing the elements that are present in only one of the input sets.
+
+Example usage:
+set_1 = { "Python", "C", "Javascript" }
+set_2 = { "Bash", "C", "Ruby", "Perl" }
+od_set = only_diff_elements(set_1, set_2)
+print(sorted(list(od_set)))  # Output: ['Bash', 'Javascript', 'Perl', 'Python', 'Ruby']
+
 6. Number of keys
 7. Print sorted dictionary
 8. Update dictionary
