@@ -33,7 +33,7 @@ By the end of this project, you should be able to:
 
 The project includes the following tasks:
 
-1. Squared simple
+### 1. Squared simple
 Square Matrix Simple
 
 This function computes the square value of all integers in a matrix.
@@ -53,9 +53,9 @@ Example:
     new_matrix = square_matrix_simple(matrix)
     # Output: [[1, 4, 9], [16, 25, 36], [49, 64, 81]]
 
-2. Search and replace
+### 2. Search and replace
 
-3. Unique addition
+### 3. Unique addition
 
 This function adds all unique integers in a list, considering each integer only once.
 
@@ -67,7 +67,7 @@ my_list = [1, 2, 3, 1, 4, 2, 5]
 result = uniq_add(my_list)
 print("Result: {:d}".format(result))
 
-4. Present in both
+### 4. Present in both
 
 a function that returns a set of common elements in two sets.
 
@@ -87,7 +87,7 @@ Example:
     c_set = common_elements(set_1, set_2)
     print(sorted(list(c_set)))  # Output: ['C']
 
-5. Only differents
+### 5. Only differents
 This code defines a function called `only_diff_elements` that takes in two sets as input and returns a new set containing only the elements that are present in one set but not in the other.
 
 Parameters:
@@ -103,11 +103,44 @@ set_2 = { "Bash", "C", "Ruby", "Perl" }
 od_set = only_diff_elements(set_1, set_2)
 print(sorted(list(od_set)))  # Output: ['Bash', 'Javascript', 'Perl', 'Python', 'Ruby']
 
-6. Number of keys
-7. Print sorted dictionary
-8. Update dictionary
-9. Simple delete by key
-10. Multiply by 2
+### 6. Number of keys
+def number_keys(a_dictionary):
+    """
+    Returns the number of keys in a dictionary.
+
+    Args:
+    - a_dictionary: A dictionary object.
+
+    Returns:
+    - The number of keys in the dictionary.
+
+    Example:
+    >>> my_dict = {'a': 1, 'b': 2, 'c': 3}
+    >>> number_keys(my_dict)
+    3
+    """
+
+### 7. Print sorted dictionary
+def print_sorted_dictionary(a_dictionary):
+    """
+    Prints a dictionary by ordered keys.
+
+    Args:
+        a_dictionary (dict): The dictionary to be printed.
+
+    Returns:
+        None
+
+    Notes:
+        - Keys should be sorted in alphabetical order.
+        - Only the keys of the first level should be sorted; keys of nested dictionaries should not be sorted.
+        - The dictionary values can have any type.
+        - No external modules are allowed to be imported.
+    """
+
+### 8. Update dictionary
+### 9. Simple delete by key
+### 10. Multiply by 2
 
 Each task has its own Python file with the corresponding function implementation.
 
