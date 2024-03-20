@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def simple_delete(a_dictionary, key=""):
-        """
+    """
     Delete a key-value pair from a dictionary.
 
     Args:
