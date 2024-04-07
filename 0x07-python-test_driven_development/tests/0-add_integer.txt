@@ -1,0 +1,20 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+"""Test Cases"""
+>>> add_integer(4,"School")
+Traceback (most recent call last):
+    ...
+TypeError: can only concatenate str (not "int") to str
+>>> print(add_integer(1, 2))
+>>> print(add_integer())
+3
+>>> print(add_integer(100, -2))
+98
+>>> print(add_integer(2))
+100
+>>> print(add_integer(100.3, -2))
+98
+>>> print(add_integer(None))
+Traceback (most recent call last):
+    ...
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
