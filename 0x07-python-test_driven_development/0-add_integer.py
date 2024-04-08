@@ -16,11 +16,9 @@ def add_integer(a, b=98):
     elif not isinstance(b, int) and not isinstance(b, float):
         raise TypeError('b must be an integer')
     else:
-        a = int(a)
-        b = int(b)
-        return (a + b)
+        return (int(a) + int(b))
 
 
 if __name__ == "__main__":
     import doctest
-    docktest.testmod()
+    docktest.testmod("tests/0-add_integer.txt")
