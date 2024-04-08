@@ -1,7 +1,0 @@
->>> Rectangle = __import__('0-rectangle').Rectangle
-
-"""Test Cases"""
->>> my_rectangle = Rectangle()
->>> print(type(my_rectangle))
-<class '__main__.Rectangle'>                                            >>> print(my_rectangle.__dict__)
-{}
