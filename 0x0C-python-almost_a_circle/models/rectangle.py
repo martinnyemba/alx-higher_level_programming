@@ -120,3 +120,17 @@ class Rectangle(Base):
             [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
+
+    def update(self, *args):
+        """Update the Rectangle. Assigns an argument to each attribute
+
+        Args:
+            *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents width attribute
+                - 3rd argument represent height attribute
+                - 4th argument represents x attribute
+                - 5th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
+        """
+
