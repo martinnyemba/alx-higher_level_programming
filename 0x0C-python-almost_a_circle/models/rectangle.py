@@ -35,6 +35,11 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Setter  method for the width of the Rectangle."""
+        #  validation of width setter methods and instantiation
+        if not isinstance(value, int):
+            raise TypeError('width must be an integer')
+        if value <= 0:
+            raise ValueError('width must be > 0')
         self.__width = value
 
     @property
@@ -45,6 +50,11 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Setter method for the height of the Rectangle."""
+        #  validation of height setter methods and instantiation
+        if not isinstance(value, int):
+            raise TypeError('height must be an integer')
+        if value <= 0:
+            raise ValueError('height must be > 0')
         self.__height = value
 
     @property
@@ -55,14 +65,25 @@ class Rectangle(Base):
     @height.setter
     def x(self, value):
         """Set the x coordinate of the Rectangle."""
+        #  validation of x setter methods and instantiation
+        if not isinstance(value, int):
+            raise TypeError('x must be an integer')
+        if value < 0:
+            raise ValueError('x must be >= 0')
         self.__x = value
 
     @property
     def y(self):
         """Get the y coordinate of the Rectangle."""
+        #  validation of y setter methods and instantiation
         return self.__y
 
     @height.setter
     def y(self, value):
         """Set the y coordinate of the Rectangle."""
+        #  validation of y setter methods and instantiation
+        if not isinstance(value, int):
+            raise TypeError('y must be an integer')
+        if value < 0:
+            raise ValueError('y must be >= 0')
         self.__y = value
