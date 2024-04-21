@@ -98,3 +98,13 @@ class Rectangle(Base):
             Area (int): width * height
         """
         return self.width * self.height
+
+    def display(self):
+        """prints in stdout the Rectangle instance with the character #"""
+        if self.width == 0 or self.height == 0:
+            print("")
+            return
+
+        for _ in range (self.height):
+            print("" * self.x, end="")
+            print("#" * self.width)
