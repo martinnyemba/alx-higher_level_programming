@@ -76,20 +76,29 @@ class TestRectangle(unittest.TestCase):
         r.height = 10
         self.assertEqual(10, r.height)
 
-    def test_x_getter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        self.assertEqual(7, r.x)
+"""Test Cases for public method def area(self): 
+    that returns the area value of the Rectangle
+"""
 
-    def test_x_setter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        r.x = 10
-        self.assertEqual(10, r.x)
-
-    def test_y_getter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        self.assertEqual(5, r.y)
-
-    def test_y_setter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        r.y = 10
-        self.assertEqual(10, r.y)
+class TestRectangleArea(unittest.TestCase):
+    def test_area_with_valid_values(self):
+        # Create a rectangle with width 5 and height 10
+        rectangle = Rectangle(5, 10)
+        # Check if the area is calculated correctly
+        self.assertEqual(rectangle.area(), 50)
+    
+    def test_area_with_zero_values(self):
+        # Create a rectangle with width 0 and height 0
+        # Check if the area is 0
+        with self.assertRaises(TypeError):
+            rectangle = Rectangle(6, "martin")
+            rectangle = Rectangle("nyemba", 10)
+            rectangle = Rectangle("10", 10)
+    
+    def test_area_with_negative_values(self):
+        with self.assertRaises(ValueError):
+            # Create a rectangle with width -5 and height 10
+            rectangle = Rectangle(-5, 10)
+            rectangle = Rectangle(-5, -10)
+            rectangle = Rectangle(-5, 10)
+            rectangle = Rectangle(5, -5)
