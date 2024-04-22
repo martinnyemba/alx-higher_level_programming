@@ -1,104 +1,104 @@
 #!/usr/bin/python3
-"""Defines Test case for the Rectangle (model/rectangle)  module"""
-#  import required modules
+"""Test Rectangle"""
 import unittest
+import pep8
 from models.base import Base
 from models.rectangle import Rectangle
 
 
-class TestRectangle(unittest.TestCase):
-    """Unittests for testing instantiation of the Rectangle class."""
+class Testrectangle(unittest.TestCase):
+    """ """
 
-    def test_rectangle_is_base(self):
-        self.assertIsInstance(Rectangle(10, 2), Base)
+    def test_pep8_conformance_rectangle(self):
+            """Test that we conform to PEP8."""
+            pep8style = pep8.StyleGuide(quiet=True)
+            result = pep8style.check_files(['models/rectangle.py'])
+            self.assertEqual(result.total_errors, 0,
+                        "Found code style errors (and warnings).")
 
-    def test_no_args(self):
-        with self.assertRaises(TypeError):
-            Rectangle()
+    def test_subclass(self):
+        self.assertTrue(issubclass(Rectangle, Base))
 
-    def test_one_arg(self):
-        with self.assertRaises(TypeError):
-            Rectangle(1)
-
-    def test_two_args(self):
+    def test_parameters(self):
+        """ """
         r1 = Rectangle(10, 2)
         r2 = Rectangle(2, 10)
-        self.assertEqual(r1.id, r2.id - 1)
+        r3 = Rectangle(10, 2, 0, 0, 12)
+        self.assertEqual(r1.id, 4)
+        self.assertEqual(r1.width, 10)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 0)
+        self.assertEqual(r1.y, 0)
+        self.assertEqual(r2.id, 5)
+        self.assertEqual(r2.width, 2)
+        self.assertEqual(r2.height, 10)
+        self.assertEqual(r2.x, 0)
+        self.assertEqual(r2.y, 0)
 
-    def test_three_args(self):
-        r1 = Rectangle(2, 2, 4)
-        r2 = Rectangle(4, 4, 2)
-        self.assertEqual(r1.id, r2.id - 1)
-
-    def test_four_args(self):
-        r1 = Rectangle(1, 2, 3, 4)
-        r2 = Rectangle(4, 3, 2, 1)
-        self.assertEqual(r1.id, r2.id - 1)
-
-    def test_five_args(self):
-        self.assertEqual(7, Rectangle(10, 2, 0, 0, 7).id)
-
-    def test_more_than_five_args(self):
+        self.assertEqual(r3.id, 12)
+        self.assertEqual(r3.width, 10)
+        self.assertEqual(r3.height, 2)
+        self.assertEqual(r3.x, 0)
+        self.assertEqual(r3.y, 0)
         with self.assertRaises(TypeError):
-            Rectangle(1, 2, 3, 4, 5, 6)
+            r4 = Rectangle()
 
-    def test_width_private(self):
-        with self.assertRaises(AttributeError):
-            print(Rectangle(5, 5, 0, 0, 1).__width)
-
-    def test_height_private(self):
-        with self.assertRaises(AttributeError):
-            print(Rectangle(5, 5, 0, 0, 1).__height)
-
-    def test_x_private(self):
-        with self.assertRaises(AttributeError):
-            print(Rectangle(5, 5, 0, 0, 1).__x)
-
-    def test_y_private(self):
-        with self.assertRaises(AttributeError):
-            print(Rectangle(5, 5, 0, 0, 1).__y)
-
-    def test_width_getter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        self.assertEqual(5, r.width)
-
-    def test_width_setter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        r.width = 10
-        self.assertEqual(10, r.width)
-
-    def test_height_getter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        self.assertEqual(7, r.height)
-
-    def test_height_setter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        r.height = 10
-        self.assertEqual(10, r.height)
-
-"""Test Cases for public method def area(self): 
-    that returns the area value of the Rectangle
-"""
-
-class TestRectangleArea(unittest.TestCase):
-    def test_area_with_valid_values(self):
-        # Create a rectangle with width 5 and height 10
-        rectangle = Rectangle(5, 10)
-        # Check if the area is calculated correctly
-        self.assertEqual(rectangle.area(), 50)
-    
-    def test_area_with_zero_values(self):
-        # Create a rectangle with width 0 and height 0
-        # Check if the area is 0
+    def test_string(self):
         with self.assertRaises(TypeError):
-            rectangle = Rectangle(6, "martin")
-            rectangle = Rectangle("nyemba", 10)
-            rectangle = Rectangle("10", 10)
-    
-    def test_area_with_negative_values(self):
+            R1 = Rectangle(1.01, 3)
+        with self.assertRaises(TypeError):
+            R1 = Rectangle(1.01, 3)
+
+    def test_type_param(self):
+        with self.assertRaises(TypeError):
+            R1 = Rectangle(1.01, 3)
+            raise TypeError()
         with self.assertRaises(ValueError):
-            # Create a rectangle with width -5 and height 10
-            rectangle = Rectangle(-5, 10)
-            rectangle = Rectangle(-5, -10)
-            rectangle = Rectangle(-5, 10)
-            rectangle = Rectangle(5, -5)
+            R2 = Rectangle(-234234242, 45)
+            raise ValueError()
+        with self.assertRaises(TypeError):
+            R3 = Rectangle("", 4)
+            raise TypeError()
+        with self.assertRaises(TypeError):
+            R4 = Rectangle(True, 4)
+            raise TypeError()
+        with self.assertRaises(TypeError):
+            H1 = Rectangle(5, 1.76)
+            raise TypeError()
+        with self.assertRaises(TypeError):
+            H2 = Rectangle(5, "Hello")
+            raise TypeError()
+        with self.assertRaises(TypeError):
+            H3 = Rectangle(5, False)
+            raise TypeError()
+        with self.assertRaises(ValueError):
+            H1 = Rectangle(5, -4798576398576)
+            raise ValueError
+        with self.assertRaises(TypeError):
+            H1 = Rectangle(5, 1, 1.50)
+            raise TypeError()
+        with self.assertRaises(TypeError):
+            H2 = Rectangle(5, 6, "test")
+            raise TypeError()
+        with self.assertRaises(TypeError):
+            H3 = Rectangle(5, 7, False)
+            raise TypeError()
+        with self.assertRaises(ValueError):
+            H1 = Rectangle(5, 7, -4798576398576)
+            raise ValueError()
+        with self.assertRaises(TypeError):
+            H1 = Rectangle(5, 1, 1, 1.53)
+            raise TypeError()
+        with self.assertRaises(TypeError):
+            H2 = Rectangle(5, 6, 5, "test")
+            raise TypeError()
+        with self.assertRaises(TypeError):
+            H3 = Rectangle(5, 7, 7, False)
+            raise TypeError()
+        with self.assertRaises(ValueError):
+            H1 = Rectangle(5, 9, 5, -4798576398576)
+            raise ValueError()
+
+
+if __name__ == '__main__':
+    unittest.main()

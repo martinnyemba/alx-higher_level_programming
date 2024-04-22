@@ -62,7 +62,7 @@ class Rectangle(Base):
         """Get the x coordinate of the Rectangle."""
         return self.__x
 
-    @height.setter
+    @x.setter
     def x(self, value):
         """Set the x coordinate of the Rectangle."""
         #  validation of x setter methods and instantiation
@@ -78,7 +78,7 @@ class Rectangle(Base):
         #  validation of y setter methods and instantiation
         return self.__y
 
-    @height.setter
+    @y.setter
     def y(self, value):
         """Set the y coordinate of the Rectangle."""
         #  validation of y setter methods and instantiation
@@ -98,7 +98,7 @@ class Rectangle(Base):
         Returns:
             Area (int): width * height
         """
-        return self.width * self.height
+        return (self.width * self.height)
 
     
     def display(self):
@@ -108,11 +108,12 @@ class Rectangle(Base):
             return
 
         for y in range(self.y):
-            print("")
+            print()
 
-        for h in range(self.height):
+        for row in range(self.height):
             print(" " * self.x, end="")
-            print("#" * self.width)
+            print("#" * self.width, end="")
+            print()
 
     def __str__(self):
         """the __str__ method
@@ -121,7 +122,7 @@ class Rectangle(Base):
         """
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update the Rectangle. Assigns an argument to each attribute
 
         Args:
@@ -133,4 +134,29 @@ class Rectangle(Base):
                 - 5th argument represents y attribute
             **kwargs (dict): New key/value pairs of attributes.
         """
-
+        count = 1
+        if args:
+            for arg in args:
+                if count == 1:
+                    self.id = arg
+                elif count == 2:
+                    self.width = arg
+                elif count == 3:
+                    self.height = arg
+                elif count == 4:
+                    self.x = arg
+                elif count == 5:
+                    self.y = arg
+                count += 1
+        elif kwargs:
+            for key in kwargs:
+                if key == 'id':
+                    self.id = kwargs[key]
+                if key == 'width':
+                    self.width = kwargs[key]
+                if key == 'height':
+                    self.height = kwargs[key]
+                if key == 'x':
+                    self.x = kwargs[key]
+                if key == 'y':
+                    self.y = kwargs[key]
