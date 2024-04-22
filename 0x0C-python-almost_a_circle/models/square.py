@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Defines the Square (a special Rectangle)"""
-from model.rectangle import Rectangle 
+from models.rectangle import Rectangle 
 
 
 class Square(Rectangle):
