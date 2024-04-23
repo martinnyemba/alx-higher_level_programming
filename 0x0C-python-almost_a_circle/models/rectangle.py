@@ -99,7 +99,15 @@ class Rectangle(Base):
         return (self.width * self.height)
 
     def display(self):
-        """Print the Rectangle using the `#` character."""
+        """Print the Rectangle using the `#` character.
+        This method prints a representation of the Rectangle object
+        using '#' characters.
+
+        It takes into account the width, height, x, and y coordinates of
+        the Rectangle to determine the display.
+
+        If the width or height is 0, it prints an empty line and returns.
+        """
         if self.width == 0 or self.height == 0:
             print("")
             return
@@ -164,7 +172,22 @@ class Rectangle(Base):
                     self.y = kwargs[key]
 
     def to_dictionary(self):
-        """ """
+        """
+        Convert the Rectangle object to a dictionary.
+
+        This method creates a dictionary representation of the
+        Rectangle object
+
+        Attributes:
+            - id: Unique identifier of the Rectangle.
+            - width: Width of the Rectangle.
+            - height: Height of the Rectangle.
+            - x: x-coordinate of the Rectangle's position.
+            - y: y-coordinate of the Rectangle's position.
+
+        Returns:
+            dict: A dictionary containing the attributes of the Rectangle
+        """
         return {
                 "id": self.id,
                 "width": self.width,
