@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base class module"""
 import json
+import csv
 
 
 class Base:
@@ -79,3 +80,35 @@ class Base:
 
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Serialize a list of objects to a CSV file.
+
+        Args:
+            cls: The class itself (e.g., Rectangle or Square).
+            list_objs (list): A list of objects to serialize.
+        """
+        filename = cls.__name__ + ".cvs"
+        with open(filename, "w") as csv_file:
+            writer = csv.writer(csv_file)
+            for objs in list_objs:
+                if cls.__name__ == "Rectangle":
+                    writer.writerow([objs.id, objs.width, objs.height,
+                                     objs.x, objs.y])
+                elif cls.__name__ == "Square":
+                    writer.writerow([objs.id, objs.size, objs.x, objs.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Deserialize objects from a CSV file.
+
+        Args:
+            cls: The class itself (e.g., Rectangle or Square).
+
+        Returns:
+            list: A list of deserialized objects.
+        """
+        pass
