@@ -55,23 +55,22 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """ Dictionary to Instance"""
-        # if dictionary and dictionary != {}:
+        """ Dictionary to Instance.
+        """
         if cls.__name__ == "Rectangle":
-            dummy_instance = cls(1, 1)
-        elif cls.__name__ == "Sqaure":
-            dummy_instance = cls(1)
-
-        dummy_instance.update(**dictionary)
-        return dummy_instance
+            obj = cls(1, 1)
+        elif cls.__name__ == "Square":
+            obj = cls(1)
+        obj.update(**dictionary)
+        return obj
 
     @classmethod
     def load_from_file(cls):
         """returns a list of instances."""
-        filename = "{}.json".format(str(cls.__name__))
+        filename = cls.__name__ + ".json"
         try:
-            with open(filename, 'r') as file:
-                json_string = file.read()
+            with open(filename, 'r') as json_file:
+                json_string = json_file.read()
                 if not json_string:
                     return []
                 obj_dicts = cls.from_json_string(json_string)
@@ -90,7 +89,7 @@ class Base:
             cls: The class itself (e.g., Rectangle or Square).
             list_objs (list): A list of objects to serialize.
         """
-        filename = cls.__name__ + ".cvs"
+        filename = cls.__name__ + ".csv"
         with open(filename, "w") as csv_file:
             writer = csv.writer(csv_file)
             for objs in list_objs:
@@ -111,4 +110,24 @@ class Base:
         Returns:
             list: A list of deserialized objects.
         """
-        pass
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, 'r') as file:
+                reader = csv.reader(file)
+                instances = []
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        obj = cls.create(id=int(row[0]),
+                                         width=int(row[1]),
+                                         height=int(row[2]),
+                                         x=int(row[3]),
+                                         y=int(row[4]))
+                    elif cls.__name__ == "Square":
+                        obj = cls.create(id=int(row[0]),
+                                         size=int(row[1]),
+                                         x=int(row[2]),
+                                         y=int(row[3]))
+                    instances.append(obj)
+                return instances
+        except FileNotFoundError:
+            return []

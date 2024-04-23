@@ -1,5 +1,6 @@
 models/__pycache__/
 tests/test_models/__pycache__/
-Rectangle.cvs
+Rectangle.csv
 Rectangle.json
 Square.json
+Square.csv
