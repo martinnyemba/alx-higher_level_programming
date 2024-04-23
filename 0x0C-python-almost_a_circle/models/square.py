@@ -83,7 +83,21 @@ class Square(Rectangle):
         return (f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}")
 
     def to_dictionary(self):
-        """ """
+        """
+        Convert the Square object to a dictionary.
+
+        This method creates a dictionary representation of the Square
+        object, including its attributes:
+
+        Attributes:
+            - id: Unique identifier of the Square.
+            - size: Size of the Square.
+            - x: x-coordinate of the Square's position.
+            - y: y-coordinate of the Square's position.
+
+        Returns:
+            dict: A dictionary containing the attributes of the Square
+        """
         return {
                 "id": self.id,
                 "size": self.size,
