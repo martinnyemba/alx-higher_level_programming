@@ -9,7 +9,7 @@ cur = conn.cursor()
 
 cur.execute("SELECT * FROM states")
 rows = cur.fetchall()
-    for row in rows:
-        print(row)
-    cur.close()
-    db.close()
+for row in rows:
+    print(row)
+cur.close()
+conn.close()
