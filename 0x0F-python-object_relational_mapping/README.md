@@ -1,9 +1,9 @@
-### Project: Python - Object-relational mapping
+# Project: Python - Object-relational mapping
 
-#### Overview
+### Overview
 This project aims to bridge Python programming with relational databases using both direct SQL queries and SQLAlchemy, an Object-Relational Mapping (ORM) tool. By working through various tasks, you'll gain hands-on experience connecting to MySQL databases, querying data, and utilizing SQLAlchemy to interact with databases in a more Pythonic way.
 
-#### Learning Objectives
+### Learning Objectives
 By the end of this project, you will:
 - Understand the benefits of using Python for database interactions.
 - Connect to a MySQL database using Python (MySQLdb).
