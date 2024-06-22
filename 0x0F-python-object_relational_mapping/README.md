@@ -116,6 +116,67 @@ $ python3
 >>> exit()
 ```
 
+## Comments for SQL File (`my_script.sql`)
+
+```sql
+-- 3 first students in the Batch ID=3
+-- because Batch 3 is the best!
+SELECT id, name FROM students WHERE batch_id = 3 ORDER BY created_at DESC LIMIT 3;
+```
+
+## Install MySQL 8.0 on Ubuntu 20.04 LTS
+
+### Update Package List and Install MySQL Server
+
+```bash
+$ sudo apt update
+$ sudo apt install mysql-server
+```
+
+### Verify MySQL Installation
+
+```bash
+$ mysql --version
+mysql  Ver 8.0.25-0ubuntu0.20.04.1 for Linux on x86_64 ((Ubuntu))
+```
+
+## Connect to your MySQL Server
+
+```bash
+$ sudo mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.25-0ubuntu0.20.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+mysql>
+mysql> quit
+Bye
+```
+
+
+If using a container for MySQL, follow these steps:
+
+### Start MySQL Service in the Container
+
+```bash
+$ service mysql start
+ * Starting MySQL database server mysqld 
+```
+
+### Credentials in Container
+
+- Username: root
+- Password: root
+
+Ensure MySQL is started (`service mysql start`) in the container before interacting with it.
+
+
 ### Additional Notes
 
 - **Warning Message**: If you encounter a warning related to `@@SESSION.GTID_EXECUTED` being deprecated, you can ignore it as it pertains to MySQL server configuration rather than SQLAlchemy usage.
